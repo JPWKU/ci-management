@@ -1,0 +1,42 @@
+---
+- project:
+    name: ci-management-jobs
+    project: 'ci-management'
+    jobs:
+      - '{project-name}-github-ci-jobs'
+      - '{project-name}-github-test'
+
+    project: ci-management
+    project-name: ci-management
+    build-node: centos7-basebuild-2c-1g
+
+- job-template:
+    name: '{project-name}-github-test'
+    properties:
+      - github:
+          url: https://github.com/edgexfoundry/ci-management/
+
+    scm:
+      - git:
+          url: git@github.com:edgexfoundry/ci-management.git
+          credentials-id: '{jenkins-ssh-credential}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          git-config-name: 'edgex-jenkins' 
+          git-config-email: 'edgex-jenkins@edgexfoundry.org' 
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          github-hooks: true
+          permit-all: true
+          auto-close-on-fail: false
+
+    publishers:
+      - trigger:
+          project: '{project-name}-ghprb-jjb-verify'
+          threshold: SUCCESS
+
+    builders:
+      - shell: echo "Hello"
+    
