@@ -26,6 +26,7 @@
       - shell: echo "Hello"
   
     publishers:
-      - trigger:
+      - trigger-parameterized-builds:
           project: '{project-name}-ghprb-jjb-merge' 
-          threshold: SUCCESS
+          condition: SUCCESS
+          predefined-parameters: ghprbGhRepository=${ghprbGhRepository}
