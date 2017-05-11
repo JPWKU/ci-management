@@ -24,4 +24,8 @@
 
     builders:
       - shell: echo "Hello"
-
+  
+    publishers:
+      - trigger:
+          project: '{project-name}-ghprb-jjb-merge' 
+          threshold: SUCCESS
