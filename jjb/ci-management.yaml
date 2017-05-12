@@ -19,8 +19,14 @@
     scm:
       - git:
           url: git@github.com:edgexfoundry/ci-management.git
-          credentials-id: 'jphelps-edgex-jenkins'
+          credentials-id: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
 
     builders:
       - shell: echo "Hello"
+  
+    publishers:
+      - trigger-parameterized-builds:
+          project: '{project-name}-ghprb-jjb-merge' 
+          condition: SUCCESS
+          predefined-parameters: ghprbGhRepository=${ghprbGhRepository}

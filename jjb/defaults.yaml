@@ -1,4 +1,4 @@
 - defaults:
     name: global
     # lf-infra defaults
-    jenkins-ssh-credential: 'jphelps-edgex-jenkins' 
+    jenkins-ssh-credential: 'edgex-jenkins-ssh' 
