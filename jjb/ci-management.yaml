@@ -2,6 +2,7 @@
 - project:
     name: ci-management-jobs
     project: 'ci-management'
+    branch: ''
     jobs:
       - '{project-name}-github-ci-jobs'
       - '{project-name}-github-test'
@@ -22,7 +23,9 @@
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
 
     parameters:
-      - lf-infra-parameters
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
 
     builders:
       - shell: echo "Hello"
