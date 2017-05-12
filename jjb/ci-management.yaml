@@ -14,19 +14,16 @@
     name: '{project-name}-github-test'
     properties:
       - github:
-          url: https://github.com/edgexfoundry/ci-management/
+          url: $GIT_BASE
 
     scm:
       - git:
-          url: git@github.com:edgexfoundry/ci-management.git
+          url: $GIT_BASE
           credentials-id: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
 
+    parameters:
+      - lf-infra-parameters
+
     builders:
       - shell: echo "Hello"
-  
-    publishers:
-      - trigger-parameterized-builds:
-          project: '{project-name}-ghprb-jjb-merge' 
-          condition: SUCCESS
-          predefined-parameters: ghprbGhRepository=${ghprbGhRepository}
