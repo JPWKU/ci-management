@@ -27,5 +27,12 @@
           project: '{project}'
           branch: '{branch}'
 
+    trigger:
+      - lf-infra-github-pr:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          permit-all: true
+          white-list: '{white-list}'
+
     builders:
       - shell: echo "Hello"
