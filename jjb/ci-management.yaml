@@ -14,11 +14,12 @@
     name: '{project-name}-github-test'
     properties:
       - github:
-          url: 'https://github.com/edgexfoundry/ci-management/'
+          url: '$ghprbAuthorRepoGitUrl'
+
 
     scm:
       - lf-infra-github-scm:
-          url: '$GIT_URL/{project}'
+          url: '$ghprbAuthorRepoGitUrl'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
@@ -28,10 +29,7 @@
     triggers:
       - github-pull-request:
           trigger-phrase: '^recheck$'
-          permit-all: true
-          github-hooks: true
-          auto-close-on-fail: false
+          only-trigger-phrase: false
 
     builders:
       - shell: echo "Hello"
-

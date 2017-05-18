@@ -1,6 +1,5 @@
 - defaults:
     name: global
     # lf-infra defaults
-    jenkins-ssh-credential: 'edgex-jenkins-ssh'
-    white-list:
-        - jpwku
+    jenkins-ssh-credential: edgex-jenkins-ssh
+    githuborg: edgexfoundry
