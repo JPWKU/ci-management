@@ -17,7 +17,12 @@
           url: 'https://github.com/edgexfoundry/ci-management/'
 
     scm:
-      - lf-infra-github-scm
+      - lf-infra-github-scm:
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: ''
+          submodule-recursive: true
 
     triggers:
       - github-pull-request:
