@@ -14,12 +14,12 @@
     name: '{project-name}-github-test'
     properties:
       - github:
-          url: '$GIT_BASE'
+          url: 'https://github.com/edgexfoundry/ci-management/'
 
     scm:
       - git:
-          url: '$GIT_BASE'
-          credentials-id: 'edgex-jenkins-ssh'
+          url: 'https://github.com/edgexfoundry/ci-management/'
+          credentials-id: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
 
     triggers:
