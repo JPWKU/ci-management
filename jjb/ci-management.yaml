@@ -14,16 +14,20 @@
     name: '{project-name}-github-test'
     properties:
       - github:
-          url: https://github.com/edgexfoundry/ci-management/
+          url: '$GIT_BASE'
 
     scm:
       - git:
-          url: git@github.com:edgexfoundry/ci-management.git
-          credentials-id: 'jphelps-edgex-jenkins'
+          url: '$GIT_BASE'
+          credentials-id: 'edgex-jenkins'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
 
     trigger:
-      - lf-infra-github-pr
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          permit-all: true
+          github-hooks: true
+          auto-close-on-fail: false
 
     builders:
       - shell: echo "Hello"
