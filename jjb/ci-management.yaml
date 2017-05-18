@@ -19,7 +19,7 @@
     scm:
       - git:
           url: '$GIT_BASE'
-          credentials-id: 'edgex-jenkins'
+          credentials-id: 'edgex-jenkins-ssh'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
 
     triggers:
