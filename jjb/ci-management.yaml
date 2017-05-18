@@ -21,6 +21,7 @@
           url: $GIT_BASE
           credentials-id: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
 
     parameters:
       - lf-infra-parameters:
