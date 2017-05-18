@@ -5,35 +5,7 @@
     branch: ''
     jobs:
       - '{project-name}-github-ci-jobs'
-      - '{project-name}-github-test'
 
     project-name: ci-management
     build-node: centos7-basebuild-2c-1g
 
-- job-template:
-    name: '{project-name}-github-test'
-    properties:
-      - github:
-          url: $GIT_BASE
-
-    scm:
-      - git:
-          url: $GIT_BASE
-          credentials-id: '{jenkins-ssh-credential}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '{branch}'
-
-    parameters:
-      - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-
-    trigger:
-      - lf-infra-github-pr:
-          trigger-phrase: '^recheck$'
-          only-trigger-phrase: false
-          permit-all: true
-          white-list: '{white-list}'
-
-    builders:
-      - shell: echo "Hello"
