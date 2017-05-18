@@ -22,7 +22,7 @@
           credentials-id: 'edgex-jenkins'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
 
-    trigger:
+    triggers:
       - github-pull-request:
           trigger-phrase: '^recheck$'
           permit-all: true
