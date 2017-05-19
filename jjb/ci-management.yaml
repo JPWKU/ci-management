@@ -28,14 +28,16 @@
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: ''
+          branch: '{branch}'
           submodule-recursive: true
 
-    trigger:
-      - lf-infra-github-pr: 
+    triggers:
+      - github-pull-request: 
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'Test Job'
+          github-hooks: true
+          permit-all: true
 
     builders:
       - shell: echo "Hello"
