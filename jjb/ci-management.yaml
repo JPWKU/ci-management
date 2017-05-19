@@ -35,6 +35,9 @@
       - github-pull-request:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
+          permit-all: true
+          github-hooks: true
+          auto-close-on-fail: false
 
     builders:
       - shell: echo "Hello"
