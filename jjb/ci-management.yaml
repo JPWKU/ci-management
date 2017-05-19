@@ -16,7 +16,7 @@
       - github:
           url: '$ghprbAuthorRepoGitUrl'
 
-    parameter:
+    parameters:
       - lf-infra-parameters:
           project: '{project}'
           branch: '{branch}'
