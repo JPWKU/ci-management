@@ -32,12 +32,10 @@
           submodule-recursive: true
 
     triggers:
-      - github-pull-request: 
+      - lf-infra-github-pr: 
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'Test Job'
-          github-hooks: true
-          permit-all: true
 
     builders:
       - shell: echo "Hello"
