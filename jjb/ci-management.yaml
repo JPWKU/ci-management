@@ -8,7 +8,6 @@
 
     project-name: ci-management
     build-node: centos7-basebuild-2c-1g
-    githuborg: edgexfoundry
 
 - job-template:
     name: '{project-name}-github-test'
