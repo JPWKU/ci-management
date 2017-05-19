@@ -31,13 +31,10 @@
           branch: '{branch}'
           submodule-recursive: true
 
-    triggers:
-      - github-pull-request:
+    trigger:
+      - lf-infra-github-pr: 
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
-          permit-all: true
-          github-hooks: true
-          auto-close-on-fail: false
 
     builders:
       - shell: echo "Hello"
