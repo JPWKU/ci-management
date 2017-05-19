@@ -14,17 +14,16 @@
 
     properties:
       - github:
-          url: 'https://github.com/edgexfoundry/ci-management/'
+          url: '$GIT_URL/{project}'
 
     parameters:
       - lf-infra-parameters:
           project: '{project}'
           branch: '{branch}'
-          githuborg: '{githuborg}'
 
     scm:
       - lf-infra-github-scm:
-          url: '$ghprbAuthorRepoGitUrl'
+          url: '$GIT_URL/{project}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
