@@ -35,6 +35,7 @@
       - lf-infra-github-pr: 
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
+          status-context: 'Test Job'
 
     builders:
       - shell: echo "Hello"
