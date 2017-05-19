@@ -28,7 +28,7 @@
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: ''
+          branch: '{branch}'
           submodule-recursive: true
 
     triggers:
