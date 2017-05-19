@@ -3,4 +3,4 @@
     # lf-infra defaults
     jenkins-ssh-credential: edgex-jenkins-ssh
     githuborg: edgexfoundry
-    branch: master
+    branch: '' 
