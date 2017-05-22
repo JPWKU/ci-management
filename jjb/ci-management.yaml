@@ -15,7 +15,7 @@
 
     properties:
       - github:
-          url: 'https://github.com/edgexfoundry/ci-management/'
+          url: '{githubproject}' 
 
     scm:
       - lf-infra-github-scm:
