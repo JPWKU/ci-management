@@ -7,6 +7,7 @@
       - '{project-name}-github-test'
 
     project-name: ci-management
+    project: ci-management
     build-node: centos7-basebuild-2c-1g
 
 - job-template:
@@ -14,16 +15,10 @@
 
     properties:
       - github:
-          url: '$GIT_URL/{project}'
-
-    parameters:
-      - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
+          url: '$GIT_URL/$PROJECT'
 
     scm:
       - lf-infra-github-scm:
-          url: '$GIT_URL/{project}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'

@@ -3,3 +3,4 @@
     # lf-infra defaults
     jenkins-ssh-credential: edgex-jenkins-ssh
     branch: ''
+    project: 'ci-management'
