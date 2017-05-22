@@ -31,5 +31,10 @@
           only-trigger-phrase: false
           status-context: 'Test Job'
 
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+
     builders:
       - shell: echo "Hello"
