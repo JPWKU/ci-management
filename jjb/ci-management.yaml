@@ -1,11 +1,40 @@
 ---
 - project:
     name: ci-management-jobs
-    project: 'ci-management'
-    branch: ''
+    project: ci-management
     jobs:
       - '{project-name}-github-ci-jobs'
+      - '{project-name}-github-test'
 
     project-name: ci-management
+    project: ci-management
     build-node: centos7-basebuild-2c-1g
 
+- job-template:
+    name: '{project-name}-github-test'
+
+    properties:
+      - github:
+          url: 'https://github.com/edgexfoundry/ci-management/'
+
+    scm:
+      - lf-infra-github-scm:
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: true
+
+    triggers:
+      - lf-infra-github-pr: 
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'Test Job'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+
+    builders:
+      - shell: echo "Hello"

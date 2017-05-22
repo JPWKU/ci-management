@@ -1,6 +1,6 @@
 - defaults:
     name: global
     # lf-infra defaults
-    jenkins-ssh-credential: 'edgex-jenkins-ssh'
-    white-list:
-        - jpwku
+    jenkins-ssh-credential: edgex-jenkins-ssh
+    branch: ''
+    project: 'ci-management'
