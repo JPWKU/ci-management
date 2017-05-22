@@ -30,8 +30,6 @@
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'Test Job'
-          white-list:
-            - jpwku
 
     parameters:
       - lf-infra-parameters:
