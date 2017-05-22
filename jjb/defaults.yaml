@@ -5,4 +5,6 @@
     branch: ''
     project: 'ci-management'
     githuborg: 'https://github.com/edgexfoundry/'
-    white-list: ['JPWKU']
+    white-list: 
+        - "JPWKU
+           agrimberg"
