@@ -15,7 +15,7 @@
 
     properties:
       - github:
-          url: 'https://github.com/edgexfoundry/ci-management/'
+          url: '{githuborg}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -30,6 +30,8 @@
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'Test Job'
+          permit-all: true
+          white-list: '{white-list}'
 
     parameters:
       - lf-infra-parameters:

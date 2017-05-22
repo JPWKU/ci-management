@@ -4,4 +4,5 @@
     jenkins-ssh-credential: edgex-jenkins-ssh
     branch: ''
     project: 'ci-management'
-    githubproject: 'https://github.com/edgexfoundry/ci-management/'
+    githuborg: 'https://github.com/edgexfoundry/'
+    white-list: ['JPWKU']
