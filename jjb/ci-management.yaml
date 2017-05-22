@@ -15,7 +15,7 @@
 
     properties:
       - github:
-          url: '$GIT_URL/$PROJECT'
+          url: 'https://github.com/ci-management/'
 
     scm:
       - lf-infra-github-scm:
