@@ -26,12 +26,14 @@
           submodule-recursive: true
 
     triggers:
-      - lf-infra-github-pr: 
+      - github-pull-request: 
           trigger-phrase: '^recheck$'
-          only-trigger-phrase: false
-          status-context: 'Test Job'
+          only-trigger-phrase: false 
+          status-context: 'JJB Test'
           permit-all: true
-          white-list: '{white-list}'
+          github-hooks: true
+          auto-close-on-fail: false
+
 
     parameters:
       - lf-infra-parameters:
