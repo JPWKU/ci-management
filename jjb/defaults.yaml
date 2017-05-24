@@ -4,3 +4,5 @@
     jenkins-ssh-credential: edgex-jenkins-ssh
     branch: ''
     project: 'ci-management'
+    github-url: 'https://github.com'
+    github-org: edgexfoundry

@@ -15,7 +15,7 @@
 
     properties:
       - github:
-          url: 'https://github.com/edgexfoundry/ci-management/'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -26,10 +26,14 @@
           submodule-recursive: true
 
     triggers:
-      - lf-infra-github-pr: 
+      - github-pull-request: 
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
-          status-context: 'Test Job'
+          status-context: 'JJB Test'
+          permit-all: true
+          github-hooks: true
+          auto-close-on-fail: false
+
 
     parameters:
       - lf-infra-parameters:
