@@ -19,6 +19,7 @@
 
     scm:
       - lf-infra-github-scm:
+          url: '{github-url}/{github-org}/{project}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
