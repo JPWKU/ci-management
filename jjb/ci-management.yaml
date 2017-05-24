@@ -15,7 +15,7 @@
 
     properties:
       - github:
-          url: '{githuborg}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -28,7 +28,7 @@
     triggers:
       - github-pull-request: 
           trigger-phrase: '^recheck$'
-          only-trigger-phrase: false 
+          only-trigger-phrase: false
           status-context: 'JJB Test'
           permit-all: true
           github-hooks: true
